@@ -21,4 +21,8 @@ class TodoRepository {
             todos.map { todo -> if (todo.id == id) todo.copy(isDone = !todo.isDone) else todo }
         }
     }
+
+    fun deleteTodo(id: Long) {
+        _todos.update { todos -> todos.filterNot { it.id == id } }
+    }
 }
