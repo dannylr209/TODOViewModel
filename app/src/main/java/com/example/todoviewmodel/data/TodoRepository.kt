@@ -1,0 +1,24 @@
+package com.example.todoviewmodel.data
+
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
+
+class TodoRepository {
+
+    private val _todos = MutableStateFlow<List<Todo>>(emptyList())
+    val todos: StateFlow<List<Todo>> = _todos.asStateFlow()
+
+    private var nextId = 0L
+
+    fun addTodo(title: String) {
+        _todos.update { todos -> todos + Todo(id = nextId++, title = title) }
+    }
+
+    fun toggleTodo(id: Long) {
+        _todos.update { todos ->
+            todos.map { todo -> if (todo.id == id) todo.copy(isDone = !todo.isDone) else todo }
+        }
+    }
+}
