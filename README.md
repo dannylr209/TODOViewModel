@@ -1,5 +1,11 @@
 # TODO App
 
+> **Sobre este repositorio**
+>
+> Esta es una copia de aprendizaje de [franzueto/TODOViewModel](https://github.com/franzueto/TODOViewModel), creada al seguir su codelab paso a paso (`codelab/index.html`). El código inicial, el codelab y el texto original del README que aparece más abajo son obra del autor original. El repositorio del que se copió no tiene un archivo de licencia, por lo que no se concede ninguna licencia para esta copia.
+>
+> A diferencia del original, `main` aquí ya contiene el refactor terminado (repositorio, clase de estado de la UI, ViewModel, composable sin estado y tests unitarios), escrito paso a paso con un commit por paso. La tabla "Branches" del final de este archivo describe el repositorio original, no este.
+
 A simple Android TODO app built with Kotlin and Jetpack Compose.
 
 - Add a task
